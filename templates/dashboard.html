@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SecureGate Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="dashboard">
+
+    <div class="header">
+        <div>
+            <h1>🛡️ SecureGate</h1>
+            <p>Cyber Security Dashboard</p>
+        </div>
+
+        <div>
+            <h3>Welcome, {{ username }} 👋</h3>
+            <a href="/logout">
+                <button>Logout</button>
+            </a>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>👤 Profile</h2>
+        <p><strong>Username:</strong> {{ username }}</p>
+        <p><strong>Role:</strong> User</p>
+        <p><strong>Status:</strong> 🟢 Active</p>
+    </div>
+
+    <div class="card">
+        <h2>🟢 System Status</h2>
+        <p>✔ Firewall Enabled</p>
+        <p>✔ Session Protected</p>
+        <p>✔ Secure Login</p>
+    </div>
+
+    <div class="card">
+        <h2>📅 Date & Time</h2>
+        <h3 id="datetime"></h3>
+    </div>
+
+    <div class="card score-card">
+    <h2>🛡️ Security Score</h2>
+
+    <div class="score-circle">
+        95%
+    </div>
+        <p>Your account security is excellent.</p>
+    </div>
+
+    <div class="card">
+    <h2>🌐 Current IP Address</h2>
+
+    <h3>{{ ip }}</h3>
+
+        <p>Connected Successfully</p>
+    </div>
+
+    <div class="card">
+        <h2>📊 Dashboard Summary</h2>
+        <p>✔ Login Successful</p>
+        <p>✔ Password Encrypted</p>
+        <p>✔ Authentication Verified</p>
+    </div>
+
+    <div class="tips">
+        <h2>💡 Security Tips</h2>
+
+        <ul>
+            <li>Use a strong password.</li>
+            <li>Enable Two-Factor Authentication.</li>
+            <li>Never share your password.</li>
+            <li>Logout after using public computers.</li>
+        </ul>
+    </div>
+
+</div>
+
+<script>
+function updateTime(){
+    const now = new Date();
+
+    document.getElementById("datetime").innerHTML =
+        now.toLocaleDateString() + "<br>" +
+        now.toLocaleTimeString();
+}
+
+setInterval(updateTime,1000);
+updateTime();
+</script>
+
+</body>
+</html> 

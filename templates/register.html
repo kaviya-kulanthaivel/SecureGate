@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SecureGate - Register</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="background">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
+
+<div class="container">
+
+    <h1 class="logo">🛡️ SecureGate</h1>
+    <p class="subtitle">Create Your Account</p>
+
+    <form method="POST">
+
+        <input
+            type="text"
+            name="username"
+            placeholder="👤 Enter Username"
+            required>
+
+        <div class="password-box">
+
+            <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="🔒 Enter Password"
+                required>
+
+            <span class="eye" onclick="togglePassword()">👁</span>
+
+        </div>
+
+        <button type="submit">Create Account</button>
+
+    </form>
+
+
+    <p>Already have an account?</p>
+
+    <a href="/login">
+        <button type="button">Login</button>
+    </a>
+
+</div>
+
+<script>
+function togglePassword(){
+
+    var password=document.getElementById("password");
+    var eye=document.querySelector(".eye");
+
+    if(password.type==="password"){
+
+        password.type="text";
+        eye.innerHTML="🙈";
+
+    }else{
+
+        password.type="password";
+        eye.innerHTML="👁️";
+
+    }
+
+}
+</script>
+
+</body>
+</html>
