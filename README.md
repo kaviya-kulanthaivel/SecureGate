@@ -28,10 +28,10 @@ SecureGate/
 │── static/
 │   └── style.css
 │── templates/
-│   ├── login.html
-│   ├── register.html
-│   ├── forgot.html
-│   └── dashboard.html
+    ├── login.html
+    ├── register.html
+    ├── forgot.html
+    └── dashboard.html
 ```
 
 ## How to Run
